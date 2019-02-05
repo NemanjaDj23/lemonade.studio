@@ -1,0 +1,59 @@
+@import "_config";
+
+.section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.section_logo {
+  width: 20%;
+}
+
+.section_title {
+  max-width: 60%;
+  font-family: "Helvetica Neue";
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 0 0 1em rgba(0, 0, 0, 0.6);
+}
+
+.btn {
+  display: inline-block;
+  margin: 4px;
+  padding: .6rem 1.2rem;
+  border-radius: 2px;
+  background-color: $color-yellow;
+  color: #000;
+  font-family: "Helvetica Neue";
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#section_first {
+  @include background-image(url(../images/img1.jpg));
+}
+
+#section_second {
+  @include background-image(url(../images/img2.jpg));
+}
+
+#section_third {
+  @include background-image(url(../images/img3.jpg));
+}
+
+#section_fourth {
+  @include background-image(url(../images/img4.jpg));
+}
+
+#section_fifth {
+  @include background-image(url(../images/img5.jpg));
+}
+
+#section_sixth {
+  @include background-image(url(../images/img6.jpg));
+}

@@ -1,0 +1,28 @@
+@import "_config";
+
+#top {
+  display: block;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: $color-gray-darken;
+  color: $color-gray;
+  border: 1px solid $color-gray;
+  border-radius: 3px;
+  opacity: .7;
+  text-align: center;
+  line-height: 3rem;
+  outline: none;
+  cursor: pointer;
+  
+  &:hover, &:active {
+    background-color: $color-yellow;
+    color: $color-gray;
+    outline: none;
+  }
+  &:focus {
+    outline: none;
+  }
+}
