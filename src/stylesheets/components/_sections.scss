@@ -1,59 +1,82 @@
 @import "_config";
 
+
+
 .section {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25pt;
+  line-height: 3rem;
   justify-content: center;
   align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.section_logo {
-  width: 20%;
+
+.section__logo {
+  width: 13rem;
+  min-height: 4rem;
+
+  &--big { width: 25rem; }
+  &--small { width: 10rem; }
+  
+  img{ width: 100%; }
 }
 
-.section_title {
-  max-width: 60%;
-  font-family: "Helvetica Neue";
-  color: #fff;
-  text-transform: uppercase;
-  text-align: center;
-  text-shadow: 0 0 1em rgba(0, 0, 0, 0.6);
+.section__text {
+    position: relative;
+    width: 95%;
+    text-align: center;
+  
+  span {
+    position: absolute;
+    left: 0;
+    top: -10rem;
+
+  }
 }
 
-.btn {
-  display: inline-block;
-  margin: 4px;
-  padding: .6rem 1.2rem;
-  border-radius: 2px;
+#section-first {
+  background-image: url("../images/lemonade_pics/audi.png");
+}
+
+#section-second {
+  background-image: url("../images/lemonade_pics/closed.jpg");
+}
+
+#section-third {
   background-color: $color-yellow;
-  color: #000;
-  font-family: "Helvetica Neue";
-  text-decoration: none;
-  text-transform: uppercase;
 }
 
-#section_first {
-  @include background-image(url(../images/img1.jpg));
+#section-fourth {
+  background-image: url("../images/lemonade_pics/porsche.jpg");
 }
 
-#section_second {
-  @include background-image(url(../images/img2.jpg));
+#section-fifth {
+  background-image: url("../images/lemonade_pics/other-stories.jpg");
 }
 
-#section_third {
-  @include background-image(url(../images/img3.jpg));
+#section-sixth {
+  background-image: url("../images/lemonade_pics/bridgestone.png");
 }
 
-#section_fourth {
-  @include background-image(url(../images/img4.jpg));
+#section-seventh {
+  background-color: $color-yellow;
 }
 
-#section_fifth {
-  @include background-image(url(../images/img5.jpg));
+#section-eighth {
+  background-image: url("../images/lemonade_pics/pilsner.jpg");
 }
 
-#section_sixth {
-  @include background-image(url(../images/img6.jpg));
+#section-ninth {
+  background-image: url("../images/lemonade_pics/google.jpg");
+}
+
+#section-tenth {
+  background-image: url("../images/lemonade_pics/mercedes.jpg");
 }

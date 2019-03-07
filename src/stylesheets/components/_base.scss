@@ -1,10 +1,11 @@
+/*@font-face {
+  font-family: "futura";
+  src:  local("../../fonts/FuturaLT.ttf") format("truetype"),
+        url("../../fonts/FuturaLT.ttf") format("truetype");
+}*/
 
 html, body {
+  //font-family: "futura", Arial, Helvetica, sans-serif;
   font-size: 16px;
   margin: 0;
-}
-
-h1 {
-  font-size: 2.3rem;
-  letter-spacing: 1.6px;
 }

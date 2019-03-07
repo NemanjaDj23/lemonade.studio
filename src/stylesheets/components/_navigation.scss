@@ -19,7 +19,8 @@
   
   &:hover, &:active {
     background-color: $color-yellow;
-    color: $color-gray;
+    border: 1px solid black;
+    color: black;
     outline: none;
   }
   &:focus {
