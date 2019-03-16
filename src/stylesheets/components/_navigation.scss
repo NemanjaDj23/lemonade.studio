@@ -13,7 +13,8 @@
   border-radius: 3px;
   opacity: .7;
   text-align: center;
-  line-height: 3rem;
+  line-height: 1.2rem;
+  padding-bottom: 1.5rem;
   outline: none;
   cursor: pointer;
   
@@ -25,5 +26,9 @@
   }
   &:focus {
     outline: none;
+  }
+
+  span {
+    font-size: 1.6rem;
   }
 }

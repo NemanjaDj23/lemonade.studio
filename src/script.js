@@ -19,6 +19,7 @@ for (let $section of $sections) {
       $cursor.style.opacity = 1;
     } else {
       document.body.style.cursor = 'auto';
+      $cursor.style.backgroundImage = '';
     }
   });
 }
