@@ -1,5 +1,42 @@
 @import "_config";
 
+#cursor {
+  position: fixed;
+  width: 400px;
+  height: 100px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 45%;
+  left: 40%;
+}
+
+.cursor-first {
+ background-image: url("../images/lemonade_curser/Lemonade_Curser_Text.png");
+}
+.cursor-second {
+ background-image: url("../images/lemonade_curser/Lemonade_Curser_Text1.png");
+}
+.cursor-fourth {
+  background-image: url("../images/lemonade_curser/Lemonade_Curser_Text3.png");
+ }
+ .cursor-fifth {
+  background-image: url("../images/lemonade_curser/Lemonade_Curser_Text4.png");
+ }
+ .cursor-sixth {
+  background-image: url("../images/lemonade_curser/Lemonade_Curser_Text5.png");
+ }
+ .cursor-eighth {
+  background-image: url("../images/lemonade_curser/Lemonade_Curser_Text7.png");
+ }
+ .cursor-ninth {
+  background-image: url("../images/lemonade_curser/Lemonade_Curser_Text8.png");
+ }
+ .cursor-tenth {
+  background-image: url("../images/lemonade_curser/Lemonade_Curser_Text9.png");
+ }
+
+
 .section {
   display: flex;
   flex-direction: column;
@@ -13,7 +50,6 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 
 .section__logo {
   width: 13rem;
@@ -54,6 +90,7 @@
 
 #section-third {
   background-color: $color-yellow;
+  cursor: pointer;
 }
 
 #section-fourth {
@@ -70,6 +107,7 @@
 
 #section-seventh {
   background-color: $color-yellow;
+  cursor: pointer;
 }
 
 #section-eighth {
@@ -126,3 +164,4 @@
     }
   }
 }
+
