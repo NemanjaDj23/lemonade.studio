@@ -1,116 +1,36 @@
-window.onload = function(){
-  const cursorDiv = document.getElementById('cursor');
-  let mouseX, mouseY, mouseFromTop, windowHeight, scrollFromTop;
+const $sections = document.querySelectorAll('.section');
+const $cursor = document.getElementById('cursor');
 
-  window.addEventListener('mousemove', function(event) {
-    mouseX = event.clientX - 200;
-    mouseY = event.clientY - 50;                   
-    if ( typeof mouseX !== 'undefined' ) {
-      cursorDiv.style.left = mouseX  + 'px';
-      cursorDiv.style.top = mouseY + 'px';
+
+window.addEventListener('mousemove', function(event) {
+  if (event.clientX && event.clientY) {
+      $cursor.style.left = event.clientX + 'px';
+      $cursor.style.top = event.clientY + 'px';
+  }
+});
+
+for (let $section of $sections) {
+  $section.addEventListener('mouseenter', () => {
+    const $cursorImage = $section.querySelector('.section__cursor');
+
+    if ($cursorImage) {
+      document.body.style.cursor = 'none';
+      $cursor.style.backgroundImage = `url(${$cursorImage.getAttribute('src')})`;
+      $cursor.style.opacity = 1;
+    } else {
+      document.body.style.cursor = 'auto';
     }
-
-    mouseFromTop = event.pageY;
-    windowHeight = window.innerHeight;
-
-    switch (Math.floor(mouseFromTop / windowHeight)) {
-      case 0:
-        cursorDiv.setAttribute('class', 'cursor-first');
-        cursorDiv.style.cursor = 'none';
-      break;
-      case 1:
-        cursorDiv.setAttribute('class', 'cursor-second');
-        cursorDiv.style.cursor = 'none';
-      break;
-      case 2:
-        cursorDiv.removeAttribute('class');
-        cursorDiv.style.cursor = 'auto';
-      break;
-      case 3:
-        cursorDiv.setAttribute('class', 'cursor-fourth');
-        cursorDiv.style.cursor = 'none';
-      break;
-      case 4:
-        cursorDiv.setAttribute('class', 'cursor-fifth');
-        cursorDiv.style.cursor = 'none';
-      break;
-      case 5:
-        cursorDiv.setAttribute('class', 'cursor-sixth');
-        cursorDiv.style.cursor = 'none';        
-      break;
-      case 6:
-        cursorDiv.removeAttribute('class');
-        cursorDiv.style.cursor = 'auto';
-      break;
-      case 7:
-        cursorDiv.setAttribute('class', 'cursor-eighth');
-        cursorDiv.style.cursor = 'none';
-      break;
-      case 8:
-        cursorDiv.setAttribute('class', 'cursor-ninth');
-        cursorDiv.style.cursor = 'none';
-      break;
-      case 9:
-      cursorDiv.setAttribute('class', 'cursor-tenth');
-      cursorDiv.style.cursor = 'none';
-      break;
-      default:
-        cursorDiv.style.cursor = 'auto';
-    }
-  }, false);
-  
-  window.addEventListener('scroll', function() {
-    scrollFromTop = window.scrollY;
-    windowHeight = window.innerHeight;
-
-    switch (Math.floor((scrollFromTop + mouseY) / windowHeight)) {
-      case 0:
-        cursorDiv.setAttribute('class', 'cursor-first');
-        cursorDiv.style.cursor = 'none';
-      break;
-      case 1:
-        cursorDiv.setAttribute('class', 'cursor-second');
-        cursorDiv.style.cursor = 'none';
-      break;
-      case 2:
-        cursorDiv.removeAttribute('class');
-        cursorDiv.style.cursor = 'auto';
-      break;
-      case 3:
-        cursorDiv.setAttribute('class', 'cursor-fourth');
-        cursorDiv.style.cursor = 'none';
-      break;
-      case 4:
-        cursorDiv.setAttribute('class', 'cursor-fifth');
-        cursorDiv.style.cursor = 'none';
-      break;
-      case 5:
-        cursorDiv.setAttribute('class', 'cursor-sixth');
-        cursorDiv.style.cursor = 'none';
-      break;
-      case 6:
-        cursorDiv.removeAttribute('class');
-        cursorDiv.style.cursor = 'auto';
-      break;
-      case 7:
-        cursorDiv.setAttribute('class', 'cursor-eighth');
-        cursorDiv.style.cursor = 'none';
-      break;
-      case 8:
-        cursorDiv.setAttribute('class', 'cursor-ninth');
-        cursorDiv.style.cursor = 'none';
-      break;
-      case 9:
-        cursorDiv.setAttribute('class', 'cursor-tenth');
-        cursorDiv.style.cursor = 'none';
-        break;
-      default:
-        cursorDiv.style.cursor = 'auto';
-    }
-  }, false);
+  });
 }
 
-
+function handleScroll() {
+  requestAnimationFrame(() => {
+    $cursor.style.opacity = 0;
+    document.body.style.cursor = 'auto';
+    $cursor.style.backgroundImage = '';
+  })
+}
+window.addEventListener('scroll', handleScroll);
 
 const topBtn = document.getElementById('top');
 
