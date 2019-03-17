@@ -32,3 +32,11 @@
     font-size: 1.6rem;
   }
 }
+
+@media screen and (max-width: 768px) {
+  #top {
+    position: fixed;
+    bottom: 1.2rem;
+    right: 1.2rem;
+  }
+}
