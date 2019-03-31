@@ -4,7 +4,11 @@
   src: url('fonts/FuturaLT.ttf') format('truetype');
 }
 
-html, body {
+* {
+  box-sizing: border-box;
+}
+
+html, body, a {
   font-family: 'futura';
   font-size: 16px;
   margin: 0;

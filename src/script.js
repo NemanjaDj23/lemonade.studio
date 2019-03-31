@@ -1,6 +1,6 @@
 const $sections = document.querySelectorAll('.section');
 const $cursor = document.getElementById('cursor');
-
+const $contactBtn = document.getElementById('contact-btn');
 
 window.addEventListener('mousemove', function(event) {
   if (event.clientX && event.clientY) {
@@ -18,7 +18,7 @@ for (let $section of $sections) {
       $cursor.style.backgroundImage = `url(${$cursorImage.getAttribute('src')})`;
       $cursor.style.opacity = 1;
     } else {
-      document.body.style.cursor = 'auto';
+      document.body.style.cursor = 'default';
       $cursor.style.backgroundImage = '';
     }
   });
@@ -27,18 +27,58 @@ for (let $section of $sections) {
 function handleScroll() {
   requestAnimationFrame(() => {
     $cursor.style.opacity = 0;
-    document.body.style.cursor = 'auto';
+    document.body.style.cursor = 'default';
     $cursor.style.backgroundImage = '';
   })
 }
-window.addEventListener('scroll', handleScroll);
 
-const topBtn = document.getElementById('top');
+$contactBtn.addEventListener('mouseover', function() {
+  $cursor.style.opacity = 0;
+  $cursor.style.backgroundImage = '';
+});
 
-topBtn.addEventListener('click', scrollToTop);
 
-function scrollToTop() {
-  const element = document.body;
-  element.scrollIntoView({behavior: 'smooth', block: 'start'});
+// Modal Closed 
+
+const $modalClosed = document.getElementById('modal-closed');
+const $sectionClosed = document.getElementById('section-second');
+
+$sectionClosed.addEventListener('click', function(e) {
+  $modalClosed.style.display = 'block';
+  if (e.target.classList.contains('close')) {
+    $modalClosed.style.display = 'none';
+  }
+});
+
+
+//Slider
+
+const $prev = document.getElementById('prev');
+const $next = document.getElementById('next');
+const $slides = document.getElementsByClassName('show-slide');
+
+$prev.addEventListener('click', prevSlide);
+$next.addEventListener('click', nextSlide);
+
+ 
+
+let slide_index = 1;
+displaySlides(slide_index);
+
+function prevSlide() {  
+  displaySlides(slide_index += -1); 
+   
+} 
+function nextSlide() {  
+  displaySlides(slide_index += 1); 
+   
+}   
+  
+function displaySlides(n) {  
+  if (n > $slides.length) { slide_index = 1 }  
+  if (n < 1) { slide_index = $slides.length }  
+  for (let i = 0; i < $slides.length; i++) {  
+    $slides[i].style.display = "none";  
+  }  
+  $slides[slide_index - 1].style.display = "block";  
 }
-
