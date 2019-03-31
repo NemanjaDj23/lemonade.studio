@@ -131,7 +131,7 @@ a {
       top: 48%;
       width: 20px;
       height: 20px;
-      opacity: .4;
+      opacity: .8;
       transition: opacity .2s ease;
 
       &:hover, &:focus {
@@ -148,9 +148,9 @@ a {
     
     .fade {  
       -webkit-animation-name: fade;  
-      -webkit-animation-duration: 1.5s;  
+      -webkit-animation-duration: .25s;  
       animation-name: fade;  
-      animation-duration: 1.5s;  
+      animation-duration: .25s;  
     } 
 
     @-webkit-keyframes fade {  

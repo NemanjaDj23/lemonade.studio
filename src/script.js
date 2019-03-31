@@ -45,8 +45,10 @@ const $sectionClosed = document.getElementById('section-second');
 
 $sectionClosed.addEventListener('click', function(e) {
   $modalClosed.style.display = 'block';
+  document.body.style.overflow = 'hidden';
   if (e.target.classList.contains('close')) {
     $modalClosed.style.display = 'none';
+    document.body.style.overflow = 'auto';
   }
 });
 
