@@ -1,6 +1,7 @@
-const $sections = document.querySelectorAll('.section');
+const $sections = document.querySelectorAll('.section') ;
 const $cursor = document.getElementById('cursor');
 const $contactBtn = document.getElementById('contact-btn');
+const $footer = document.getElementById('footer');
 
 window.addEventListener('mousemove', function(event) {
   if (event.clientX && event.clientY) {
@@ -37,6 +38,12 @@ $contactBtn.addEventListener('mouseover', function() {
   $cursor.style.backgroundImage = '';
 });
 
+$footer.addEventListener('mouseover', function() {
+  $cursor.style.opacity = 0;
+  document.body.style.cursor = 'default';
+  $cursor.style.backgroundImage = '';
+});
+
 
 // Modal Closed 
 
@@ -62,25 +69,22 @@ const $slides = document.getElementsByClassName('show-slide');
 $prev.addEventListener('click', prevSlide);
 $next.addEventListener('click', nextSlide);
 
- 
-
-let slide_index = 1;
-displaySlides(slide_index);
+let slideIndex = 1;
+displaySlides(slideIndex);
 
 function prevSlide() {  
-  displaySlides(slide_index += -1); 
-   
-} 
+  displaySlides(slideIndex += -1);   
+}
+
 function nextSlide() {  
-  displaySlides(slide_index += 1); 
-   
-}   
+  displaySlides(slideIndex += 1);    
+}  
   
 function displaySlides(n) {  
-  if (n > $slides.length) { slide_index = 1 }  
-  if (n < 1) { slide_index = $slides.length }  
+  if (n > $slides.length) { slideIndex = 1 }  
+  if (n < 1) { slideIndex = $slides.length }  
   for (let i = 0; i < $slides.length; i++) {  
-    $slides[i].style.display = "none";  
+    $slides[i].style.display = 'none';  
   }  
-  $slides[slide_index - 1].style.display = "block";  
+  $slides[slideIndex - 1].style.display = 'block';  
 }
