@@ -59,32 +59,55 @@ $sectionClosed.addEventListener('click', function(e) {
   }
 });
 
+//Modal Mercedes 
+
+const $modalMercedes = document.getElementById('modal-mercedes');
+const $sectionMercedes = document.getElementById('section-tenth');
+
+$sectionMercedes.addEventListener('click', function(e) {
+  $modalMercedes.style.display = 'block';
+  document.body.style.overflow = 'hidden';
+  if (e.target.classList.contains('close')) {
+    $modalMercedes.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+});
 
 //Slider
 
-const $prev = document.getElementById('prev');
-const $next = document.getElementById('next');
-const $slides = document.getElementsByClassName('show-slide');
+const $prevClosed = document.getElementById('prev-closed');
+const $nextClosed = document.getElementById('next-closed');
+const $prevMercedes = document.getElementById('prev-mercedes');
+const $nextMercedes = document.getElementById('next-mercedes');
+const $slideId = ['show-slide-closed', 'show-slide-mercedes'];
 
-$prev.addEventListener('click', prevSlide);
-$next.addEventListener('click', nextSlide);
+$prevClosed.addEventListener('click', function() {
+  plusSlides(-1, 0);
+});
+$nextClosed.addEventListener('click', function() {
+  plusSlides(1, 0);
+});
+$prevMercedes.addEventListener('click', function() {
+  plusSlides(-1, 1);
+});
+$nextMercedes.addEventListener('click', function() {
+  plusSlides(1, 1);
+});
 
-let slideIndex = 1;
-displaySlides(slideIndex);
+let slideIndex = [1, 1];
+displaySlides(1, 0);
+displaySlides(1, 1);
 
-function prevSlide() {  
-  displaySlides(slideIndex += -1);   
+function plusSlides(n, no) {  
+  displaySlides(slideIndex[no] += n, no);   
 }
-
-function nextSlide() {  
-  displaySlides(slideIndex += 1);    
-}  
   
-function displaySlides(n) {  
-  if (n > $slides.length) { slideIndex = 1 }  
-  if (n < 1) { slideIndex = $slides.length }  
+function displaySlides(n, no) {
+  let $slides = document.getElementsByClassName($slideId[no])  
+  if (n > $slides.length) { slideIndex[no] = 1 }  
+  if (n < 1) { slideIndex[no] = $slides.length }  
   for (let i = 0; i < $slides.length; i++) {  
     $slides[i].style.display = 'none';  
   }  
-  $slides[slideIndex - 1].style.display = 'block';  
+  $slides[slideIndex[no] - 1].style.display = 'block';  
 }

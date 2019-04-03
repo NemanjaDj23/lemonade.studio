@@ -84,6 +84,7 @@ a {
     left: 50%;
     width: 1050px;
     height: 590px;
+    background-color: rgba(255, 255, 255, .95);
     transform: translate(-50%, -50%);
 
     .close {
@@ -103,7 +104,7 @@ a {
     height: 100%;
     overflow: hidden; 
 
-    .show-slide {
+    .show-slide-closed, .show-slide-mercedes {
       display: none;
       width: 100%;
       height: 100%;
@@ -112,16 +113,16 @@ a {
         width: 100%;
       }
     }
-    #next, #prev {
+    .next, .prev {
       position: absolute;
       top: 48%;
       width: 20px;
       height: 20px;
     }
-    #next {
+    .next {
       right: 1rem;
     }
-    #prev {
+    .prev {
       left: 1rem;
     }
   } 
@@ -200,7 +201,7 @@ footer {
     top: 0;
     left: 0;
     width: 100%;
-    height: calc(100% - 5rem);
+    height: calc(100vh - 5rem);
     font-size: 25px;
     letter-spacing: .2rem;
     text-align: center;
@@ -334,6 +335,9 @@ footer {
     .impressum {
       font-size: 16px;
       line-height: 1.6rem;
+      a {
+        font-size: 16px;
+      }
     }
   }
 }
