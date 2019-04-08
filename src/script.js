@@ -45,33 +45,23 @@ $footer.addEventListener('mouseover', function() {
 });
 
 
-// Modal Closed 
+// Modal 
 
-const $modalClosed = document.getElementById('modal-closed');
-const $sectionClosed = document.getElementById('section-second');
-
-$sectionClosed.addEventListener('click', function(e) {
-  $modalClosed.style.display = 'block';
-  document.body.style.overflow = 'hidden';
-  if (e.target.classList.contains('close')) {
-    $modalClosed.style.display = 'none';
-    document.body.style.overflow = 'auto';
+window.addEventListener('hashchange', function() {
+  if (location.hash === '#modal-closed' || location.hash === '#modal-mercedes' || location.hash === '#impressum') {
+    document.body.classList.add('hidden');
+  } else {
+    document.body.classList.remove('hidden');
   }
 });
 
-//Modal Mercedes 
-
-const $modalMercedes = document.getElementById('modal-mercedes');
-const $sectionMercedes = document.getElementById('section-tenth');
-
-$sectionMercedes.addEventListener('click', function(e) {
-  $modalMercedes.style.display = 'block';
-  document.body.style.overflow = 'hidden';
-  if (e.target.classList.contains('close')) {
-    $modalMercedes.style.display = 'none';
-    document.body.style.overflow = 'auto';
+window.addEventListener('load', function() {
+  if (location.hash === '#modal-closed' || location.hash === '#modal-mercedes' || location.hash === '#impressum') {
+    document.body.classList.add('hidden');
   }
 });
+
+
 
 //Slider
 

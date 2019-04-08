@@ -11,7 +11,16 @@
 html, body, a {
   font-family: 'futura';
   font-size: 16px;
+  overflow-x: hidden;
   margin: 0;
+}
+
+.hidden {
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
 .minimal-button {
