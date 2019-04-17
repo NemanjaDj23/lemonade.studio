@@ -85,6 +85,26 @@ function displaySlides(n, no) {
 
 //Impressum
 
+
+
+
+  /*requestAnimationFrame( () => {
+    const a = document.getElementById('section-mercedes').clientHeight;
+    const b = document.body.clientHeight;
+    let c = this.scrollY;
+
+    if ((b - a) - c  === 0) {
+      $footer.style.display = 'block';
+      $footer.style.transform = 'translateY(-100vh)'
+    } 
+
+    if ((b - a - 1) - c  >= 0) {
+      $footer.style.display = 'none';
+      $footer.style.transform = 'translateY(0)';
+    }
+  })*/
+
+
 window.addEventListener('scroll', function() {
 const a = document.getElementById('section-mercedes').clientHeight;
 const b = document.body.clientHeight;
@@ -92,7 +112,7 @@ let c = this.scrollY;
 
 if ((b - a) - c  === 0) {
   $footer.style.display = 'block';
-  $footer.style.transform = 'translateY(-100vh)';
+  $footer.style.transform = 'translateY(-100vh)'
 } 
 
 if ((b - a - 1) - c  >= 0) {

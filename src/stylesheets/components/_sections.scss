@@ -217,6 +217,7 @@ footer {
     
     a {
       color: #000;
+      text-decoration: none;
       font-size: 25px;
       &:hover, &:active {
         color: #161558;
@@ -310,6 +311,16 @@ footer {
     bottom: 1rem;
     right: 1rem;
     a {font-size: 20px;}
+  }
+
+  footer {
+    .impressum-content {
+      font-size: 18px;
+
+      a {
+        font-size: 18px;
+      }
+    }
   }
 }
 
