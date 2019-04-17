@@ -44,25 +44,6 @@ $footer.addEventListener('mouseover', function() {
   $cursor.style.backgroundImage = '';
 });
 
-
-// Modal 
-
-window.addEventListener('hashchange', function() {
-  if (location.hash === '#modal-closed' || location.hash === '#modal-mercedes' || location.hash === '#impressum') {
-    document.body.classList.add('hidden');
-  } else {
-    document.body.classList.remove('hidden');
-  }
-});
-
-window.addEventListener('load', function() {
-  if (location.hash === '#modal-closed' || location.hash === '#modal-mercedes' || location.hash === '#impressum') {
-    document.body.classList.add('hidden');
-  }
-});
-
-
-
 //Slider
 
 const $prevClosed = document.getElementById('prev-closed');
@@ -101,3 +82,21 @@ function displaySlides(n, no) {
   }  
   $slides[slideIndex[no] - 1].style.display = 'block';  
 }
+
+//Impressum
+
+window.addEventListener('scroll', function() {
+const a = document.getElementById('section-mercedes').clientHeight;
+const b = document.body.clientHeight;
+let c = this.scrollY;
+
+if ((b - a) - c  === 0) {
+  $footer.style.display = 'block';
+  $footer.style.transform = 'translateY(-100vh)';
+} 
+
+if ((b - a - 1) - c  >= 0) {
+  $footer.style.display = 'none';
+  $footer.style.transform = 'translateY(0)';
+}
+});
