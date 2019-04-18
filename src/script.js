@@ -1,7 +1,6 @@
 const $sections = document.querySelectorAll('.section') ;
 const $cursor = document.getElementById('cursor');
 const $contactBtn = document.getElementById('contact-btn');
-const $footer = document.getElementById('footer');
 
 window.addEventListener('mousemove', function(event) {
   if (event.clientX && event.clientY) {
@@ -35,12 +34,6 @@ function handleScroll() {
 
 $contactBtn.addEventListener('mouseover', function() {
   $cursor.style.opacity = 0;
-  $cursor.style.backgroundImage = '';
-});
-
-$footer.addEventListener('mouseover', function() {
-  $cursor.style.opacity = 0;
-  document.body.style.cursor = 'default';
   $cursor.style.backgroundImage = '';
 });
 
@@ -86,37 +79,14 @@ function displaySlides(n, no) {
 //Impressum
 
 
-
-
-  /*requestAnimationFrame( () => {
-    const a = document.getElementById('section-mercedes').clientHeight;
-    const b = document.body.clientHeight;
-    let c = this.scrollY;
-
-    if ((b - a) - c  === 0) {
-      $footer.style.display = 'block';
-      $footer.style.transform = 'translateY(-100vh)'
-    } 
-
-    if ((b - a - 1) - c  >= 0) {
-      $footer.style.display = 'none';
-      $footer.style.transform = 'translateY(0)';
-    }
-  })*/
-
-
 window.addEventListener('scroll', function() {
-const a = document.getElementById('section-mercedes').clientHeight;
-const b = document.body.clientHeight;
-let c = this.scrollY;
+  requestAnimationFrame(function() {
+    const $footer = document.getElementById('footer');
+    const $lastSectionClientHeight = document.getElementById('section-mercedes').clientHeight;
+    const bodyClientHeight = document.body.clientHeight;
+    let scrollHeight = this.scrollY;
 
-if ((b - a) - c  === 0) {
-  $footer.style.display = 'block';
-  $footer.style.transform = 'translateY(-100vh)'
-} 
-
-if ((b - a - 1) - c  >= 0) {
-  $footer.style.display = 'none';
-  $footer.style.transform = 'translateY(0)';
-}
+    ((bodyClientHeight - $lastSectionClientHeight - 1) < scrollHeight) ? $footer.style.transform = 'translateY(-100vh)' : $footer.style.transform = 'translateY(0)';
+    $footer.style.transition = 'transform .4s ease';
+  })
 });
