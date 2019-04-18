@@ -86,7 +86,7 @@ window.addEventListener('scroll', function() {
     const bodyClientHeight = document.body.clientHeight;
     let scrollHeight = this.scrollY;
 
-    ((bodyClientHeight - $lastSectionClientHeight + 5) < scrollHeight) ? $footer.style.transform = 'translateY(-100vh)' : $footer.style.transform = 'translateY(0)';
+    ((bodyClientHeight - $lastSectionClientHeight - 1) < scrollHeight) ? $footer.style.transform = 'translateY(-100vh)' : $footer.style.transform = 'translateY(0)';
     $footer.style.transition = 'transform .4s ease';
   })
 });
