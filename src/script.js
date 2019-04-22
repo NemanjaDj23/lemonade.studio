@@ -1,6 +1,7 @@
 const $sections = document.querySelectorAll('.section') ;
 const $cursor = document.getElementById('cursor');
 const $contactBtn = document.getElementById('contact-btn');
+const $footer = document.getElementById('footer');
 
 window.addEventListener('mousemove', function(event) {
   if (event.clientX && event.clientY) {
@@ -33,6 +34,11 @@ function handleScroll() {
 }
 
 $contactBtn.addEventListener('mouseover', function() {
+  $cursor.style.opacity = 0;
+  $cursor.style.backgroundImage = '';
+});
+
+$footer.addEventListener('mouseover', function() {
   $cursor.style.opacity = 0;
   $cursor.style.backgroundImage = '';
 });
@@ -75,18 +81,3 @@ function displaySlides(n, no) {
   }  
   $slides[slideIndex[no] - 1].style.display = 'block';  
 }
-
-//Impressum
-
-
-window.addEventListener('scroll', function() {
-  requestAnimationFrame(function() {
-    const $footer = document.getElementById('footer');
-    const $lastSectionClientHeight = document.getElementById('section-mercedes').clientHeight;
-    const bodyClientHeight = document.body.clientHeight;
-    let scrollHeight = this.scrollY;
-
-    ((bodyClientHeight - $lastSectionClientHeight - 1) < scrollHeight) ? $footer.style.transform = 'translateY(-100%) scale(1)' : $footer.style.transform = 'translateY(0) scale(0)';
-    $footer.style.transition = 'transform 0.25s ease';
-  })
-});
