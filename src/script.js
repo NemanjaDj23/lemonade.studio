@@ -81,3 +81,35 @@ function displaySlides(n, no) {
   }  
   $slides[slideIndex[no] - 1].style.display = 'block';  
 }
+
+//iframe
+window.addEventListener('click', (e) => {
+  const audiVimeo = `<iframe class="video" src="https://player.vimeo.com/video/320454100" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+  const porscheVimeo = `<iframe class="video" src="https://player.vimeo.com/video/316614964" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+  const bridgestoneVimeo = `<iframe class="video" src="https://player.vimeo.com/video/316615802" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+  const pilsnerVimeo = `<iframe class="video" src="https://player.vimeo.com/video/320455784" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+
+  if(e.target.id.includes('audi')) {
+    document.getElementById('modal-audi-iframe').innerHTML = audiVimeo;
+  } else {
+    document.getElementById('modal-audi-iframe').innerHTML = '';
+  }
+
+  if(e.target.id.includes('porsche')) {
+    document.getElementById('modal-porsche-iframe').innerHTML = porscheVimeo;
+  } else {
+    document.getElementById('modal-porsche-iframe').innerHTML = '';
+  }
+
+  if(e.target.id.includes('bridgestone')) {
+    document.getElementById('modal-bridgestone-iframe').innerHTML = bridgestoneVimeo;
+  } else {
+    document.getElementById('modal-bridgestone-iframe').innerHTML = '';
+  }
+
+  if(e.target.id.includes('pilsner')) {
+    document.getElementById('modal-pilsner-iframe').innerHTML = pilsnerVimeo;
+  } else {
+    document.getElementById('modal-pilsner-iframe').innerHTML = '';
+  }
+})

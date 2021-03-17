@@ -12,11 +12,16 @@
   <button id="contact-btn"><a href="mailto: hi@lemonade.studio">Contact</a></button>
 
   <div id="cursor"></div>
-
-  <a href="https://vimeo.com/320454100" target="_blank" class="section" id="section-audi">
+  <a href="#modal-audi" class="section" id="section-audi" >
     <img src="./src/images/cursors/audi-cursor.png" class="section__cursor">
-    <div class="section__logo section__logo--small"><img src="src/images/logos/audi-logo.png" alt="audi-logo"></div>
+    <div class="section__logo section__logo--small"><img id="audi-logo" src="src/images/logos/audi-logo.png" alt="audi-logo"></div>
   </a>
+  <div class="modal" id="modal-audi">
+    <a href="#section-audi" class="modal-overlay"></a>
+    <div class="modal-content modal-content--transparent">
+      <div id="modal-audi-iframe" class='wrap'></div>
+    </div>
+  </div>
 
   <a href="#modal-closed" class="section" id="section-closed" >
     <img src="./src/images/cursors/closed-cursor.png" class="section__cursor">
@@ -62,20 +67,31 @@
     </div>
   </section>
 
-  <a href="https://vimeo.com/316614964" target="_blank" class="section" id="section-porsche">
+  <a href="#modal-porsche" class="section" id="section-porsche" >
     <img src="./src/images/cursors/porsche-cursor.png" class="section__cursor">
-    <div class="section__logo section__logo--small"><img src="src/images/logos/porsche-logo.png" alt="porsche-logo"></div>
+    <div class="section__logo section__logo--small"><img id="porsche-logo" src="src/images/logos/porsche-logo.png" alt="porsche-logo"></div>
   </a>
-
+  <div class="modal" id="modal-porsche">
+    <a href="#section-porsche" class="modal-overlay"></a>
+    <div class="modal-content modal-content--transparent">
+      <div id="modal-porsche-iframe" class='wrap'></div>
+    </div>
+  </div>
   <a href="https://about.hm.com/en/brands/stories.html" target="_blank" class="section" id="section-stories">
     <img src="./src/images/cursors/h&m-cursor.png" class="section__cursor">
     <div class="section__logo section__logo--big"><img src="src/images/logos/&otherstories-logo.png" alt="&otherstories-logo"></div>
   </a>
 
-  <a href="https://vimeo.com/316615802" target="_blank" class="section"  id="section-bridgestone">
+  <a href="#modal-bridgestone" class="section" id="section-bridgestone" >
     <img src="./src/images/cursors/bridgestone-cursor.png" class="section__cursor">
-    <div class="section__logo section__logo--big"><img src="src/images/logos/bridgestone-logo.png" alt="bridgestone-logo"></div>
+    <div class="section__logo section__logo--big"><img id="bridgestone-logo" src="src/images/logos/bridgestone-logo.png" alt="bridgestone-logo"></div>
   </a>
+  <div class="modal" id="modal-bridgestone">
+    <a href="#section-bridgestone" class="modal-overlay"></a>
+    <div class="modal-content modal-content--transparent">
+      <div id="modal-bridgestone-iframe" class='wrap'></div>
+    </div>
+  </div>
 
   <section class="section" id="section-clients">
     <div class="section__text">
@@ -89,10 +105,16 @@
     </div>
   </section>
 
-  <a href="https://vimeo.com/320455784" target="_blank" class="section"  id="section-pilsner">
+  <a href="#modal-pilsner" class="section" id="section-pilsner" >
     <img src="./src/images/cursors/pilsner-cursor.png" class="section__cursor">
-    <div class="section__logo"><img src="src/images/logos/pilsner-logo.png" alt="pilsner-logo"></div>
+    <div class="section__logo"><img id="pilsner-logo" src="src/images/logos/pilsner-logo.png" alt="pilsner-logo"></div>
   </a>
+  <div class="modal" id="modal-pilsner">
+    <a href="#section-pilsner" class="modal-overlay"></a>
+    <div class="modal-content modal-content--transparent">
+      <div id="modal-pilsner-iframe" class='wrap'></div>
+    </div>
+  </div>
 
   <a href="https://assistant.google.com/services/a/uid/0000009f81de793c?hl=en" target="_blank" class="section" id="section-google">
     <img src="./src/images/cursors/google-cursor.png" class="section__cursor">
